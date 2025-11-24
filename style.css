@@ -1,0 +1,371 @@
+:root {
+    --primary: #0043d4;
+    --primary-dark: #002fb1;
+    --bg: #ffffff;
+    --text: #000000;
+    --light-gray: #f1f5f9;
+    --border: #ffffff;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --header-height: 80px; /* penting untuk offset */
+    
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--bg);
+    padding-top: var(--header-height); /* mencegah konten tertutup header */
+    
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  section {
+    padding: 4rem 0;
+  }
+  
+  /* Header */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    height: var(--header-height);
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.25rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    white-space: nowrap;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary);
+    color: rgb(251, 251, 251);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  /* Hero */
+  #home {
+    text-align: center;
+    background-color: var(--light-gray);
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+/* About */
+#about {
+    padding-top: 6rem; /* kompensasi header fixed */
+  }
+  
+  #about .section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: flex-start; /* agar teks sejajar atas dengan foto */
+    gap: 2rem;
+    flex-wrap: wrap; /* memungkinkan pindah baris di layar sangat kecil */
+  }
+  
+  .profile-img {
+    flex: 0 0 auto;
+  }
+  
+  .profile-img img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border);
+  }
+  
+  .about-text {
+    flex: 1;
+    min-width: 280px; /* mencegah teks terlalu sempit */
+  }
+  
+  .skills {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  .skill-tag {
+    background: var(--light-gray);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsif: di layar kecil, foto lebih kecil agar muat berdampingan */
+  @media (max-width: 600px) {
+    .profile-img img {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .about-content {
+      gap: 1.25rem;
+    }
+  }
+  
+  .skills {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  .skill-tag {
+    background: var(--light-gray);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Projects */
+  #projects {
+    background-color: var(--light-gray);
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem;
+  }
+  
+  .project-card {
+    background: rgb(229, 229, 229);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Contact */
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    font-family: inherit;
+  }
+  
+  .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: var(--light-gray);
+    margin-top: 2rem;
+  }
+  
+  /* Scroll to Top */
+  #scrollToTop {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 48px;
+    height: 48px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.25rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  #scrollToTop.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  #scrollToTop:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+  }
+  
+  /* 📱 Responsive: Tablet & Mobile */
+  @media (max-width: 768px) {
+    :root {
+      --header-height: 110px; /* lebih tinggi karena nav membungkus */
+    }
+  
+    .header-container {
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    .nav-links {
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .section-title {
+      font-size: 1.75rem;
+    }
+  
+    section {
+      padding: 3rem 0;
+    }
+  
+    #home {
+      padding-top: 5rem;
+      padding-bottom: 3rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .btn {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  
+    .project-card {
+      padding: 1rem;
+    }
+  
+    .social-links {
+      gap: 1rem;
+      font-size: 1.25rem;
+    }
+  
+    #scrollToTop {
+      width: 44px;
+      height: 44px;
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+  
+  .icon {
+    width: 30px;
+    height: 40px;
+
+  }
