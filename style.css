@@ -117,7 +117,7 @@
   
 /* About */
 #about {
-    padding-top: 6rem; /* kompensasi header fixed */
+    padding-top: 1rem; /* kompensasi header fixed */
   }
   
   #about .section-title {
@@ -127,13 +127,22 @@
   
   .about-content {
     display: flex;
-    align-items: flex-start; /* agar teks sejajar atas dengan foto */
-    gap: 2rem;
+    align-items: center; /* agar teks sejajar atas dengan foto */
+    gap: 1rem;
     flex-wrap: wrap; /* memungkinkan pindah baris di layar sangat kecil */
+    justify-content: start;
+    text-align: start;
+    align-items: start;
+    margin-top: 0 0 auto;
+    margin: 0 0 auto;
+    padding: -100px;
+    
   }
   
   .profile-img {
     flex: 0 0 auto;
+    padding: 6px;
+    margin: 95px;
   }
   
   .profile-img img {
@@ -142,6 +151,7 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--border);
+    
   }
   
   .about-text {
